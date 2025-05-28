@@ -1,15 +1,16 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/1/Xor.hdl
+// File name: projects/1/And.hdl
 /**
- * Exclusive-or gate:
- * if ((a and Not(b)) or (Not(a) and b)) out = 1, else out = 0
+ * And gate:
+ * if (a and b) out = 1, else out = 0 
  */
-CHIP Xor {
+CHIP And {
     IN a, b;
     OUT out;
-
+    
     PARTS:
-    //// Replace this comment with your code.
+    Nand(a=a, b=b, out=nanda);
+    Not(in=nanda, out=out);
 }
